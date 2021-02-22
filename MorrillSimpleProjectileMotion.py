@@ -6,7 +6,7 @@ theta = (90-37.4109) # in degrees
 g = -9.8 # in m/s^2
 m = 0.04593 # in Kg
 C = 4E-4 # in Kg/m
-w = float(input("What is the angular acceleration in rad/s?: ")) # in rad/s
+w = 7.27E-5 # in rad/s
 l = 37.4109 # in degrees
 
 x = 0.0 # in m
@@ -17,9 +17,9 @@ t = 0.0 # in s
 dt = 2E-6
 
 def acceleration(v_x, v_y, v_z, C, m):
-    a_x = -C*v_x*math.sqrt(v_x*v_x + v_y*v_y)/m - 2*v_z*(w*math.sin(l*math.pi/180))
-    a_y = g - C*v_y*math.sqrt(v_x*v_x + v_y*v_y)/m + 2*v_z*(w*math.cos(l*math.pi/180))
-    a_z = -C*v_z*math.sqrt(v_z*v_z + v_y*v_y)/m +2*(v_x*(w*math.sin(l*math.pi/180))-v_y*(w*math.cos(l*math.pi/180)))
+    a_x = -C*v_x*math.sqrt(v_x*v_x + v_y*v_y)/m
+    a_y = g - C*v_y*math.sqrt(v_x*v_x + v_y*v_y)/m
+    a_z = -C*v_z*math.sqrt(v_z*v_z + v_y*v_y)/m
     return a_x, a_y, a_z
 
 def update(x, y, z, v_x, v_y, v_z, a_x, a_y, a_z, dt):
