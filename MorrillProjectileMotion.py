@@ -53,7 +53,7 @@ while(inFlight):
 outFile.close()
 
 print("Max Height: ", y_max)
-print("Horizontal Range: ", x)
+print("Horizontal Range: ", math.sqrt(x**2 + z**2))
 
 X = []
 Y = []
